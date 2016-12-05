@@ -15,8 +15,11 @@ class User < ActiveRecord::Base
   end
 
   def facebook
-    @facebook ||= Koala::Facebook::API.new('EAACEdEose0cBAGftfb7MbMxdni6Inije6dywg3pghfWM3cIGqHO3kmU8lZCDy4ZC8GF8MGurs2CTVFaCt4ZBPR8BQxx5uxZBZBbKo5qmTkVJToPwUlGVXoskR9vFzGCcLrwGZB6c1NaPDKBf5stATsx8uRNouadGSjJkCy7yjUogZDZD') #oauth_code
-    # @facebook.get_object("me?fields=name,picture")
+    @facebook ||= Koala::Facebook::API.new('EAACEdEose0cBAAUBfhjaZAYnZBOi0oocXcLLzZBsN1MsM0S3Mkc8SVy46uvLCey9HuHBGbXfU9dtN5mnjFYf7oFjhGnUik9PnaqxOZBT8H1MmJpQKWNZB2Idzzzu0MHBChzL3FjsinKpL1BwZAtwzufFU6MWOsilCp5ZAWl7v5ZAsAZDZD') #oauth_code
+    # En la siguiente pagina biene sobre el uso de Koala y la API de fb 
+    # https://github.com/arsduo/koala/wiki/Graph-API
+    # El token se obtiene de la siguiente pagina
+    # http://developers.facebook.com/tools/explorer/
   end
 
 end

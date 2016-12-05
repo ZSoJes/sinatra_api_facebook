@@ -46,10 +46,15 @@ end
 
 def facebook_permissions
 # Aquí van los permisos de tu aplicación, fíjate en qué formato tienen que ir.
-
+  permisos = 'public_profile ,user_friends ,email ,user_about_me ,publish_actions ,user_likes ,user_photos ,user_posts ,user_videos ,user_website'
+  permisos
+  # los permisos se encuentran aquí
+  # https://developers.facebook.com/docs/facebook-login/permissions
 end
 
 use OmniAuth::Builder do
 provider :facebook, ENV['APP_ID'], ENV['SECRET'],
-         :scope => facebook_permissions
+         :scope => facebook_permissions,
+         :image_size => {:width => 200, :height => 200},
+         :display => 'page'
 end

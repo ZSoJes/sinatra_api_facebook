@@ -3,5 +3,5 @@ $(document).ready(function() {
 	// completamente. 
 	// Esto garantiza que si amarramos(bind) una función a un elemento 
 	// de HTML este exista ya en la página. 
-
+  
 });

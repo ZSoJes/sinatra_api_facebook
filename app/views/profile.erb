@@ -1,18 +1,46 @@
-<style type="text/css">
-  h1{
-    text-shadow: 2px 2px 10px lime;
-    color:navy;
-    font-weight: bold;
-    background: silver;
-    width: 400px;
-    text-align: center;
+<h1>Bienvenido de nuevo <%= session[:username] %></h1>
+
+
+<style>
+  label,textarea,input{
+    margin: 20px 10px;
+    font-size: 15px;
+    color:black;
+  } 
+  form{
+    margin: 10px;
+    padding: 10px;
     border-radius: 10px;
-    border: 5px solid yellowgreen;
+    border:5px solid skyblue;
+    background: royalblue;
+    margin-bottom: 200px;
+    position:absolute;top:150px;
+    width:500px;
+  }
+  label{
+    font-weight:bold;font-size:15px;color:white;
+  }
+  textarea{
+    padding: 10px;border-radius: 20px;background:darkcyan;color:darkblue;width:80%;
+  }
+  #profile_pic{
+    z-index: 1;
+    border:10px solid royalblue;
+    border-radius:30px;
   }
 </style>
-<h1>Este deberia ser tu perfil</h1>
+<script type="text/javascript">var imagen = setInterval(move, 500); function move(){ $("img").animate({top:"-18%"},500); $("img").animate({top:"-16%"},500); }</script>
+<img id="profile_pic" src="<%= session[:user_pic] %>" alt="No image found" style="position:relative;left:70%;top:-16%;"> 
 
-<%= profile %>
-<%= friends %>
 
-<a href="/exit"><button>Salir</button></a>
+
+<form action="/mensaje" method="post">
+  <label for="texto">Escribe un mensaje para Facebook</label>
+  <textarea name="msn" id="texto" rows="10"></textarea>
+  <input class="btn" type="submit" value="Postear">
+</form>
+<br style="margin-bottom: 200px">
+<br>
+<hr>
+
+<a href="/exit"><button class="btn">Salir</button></a>
